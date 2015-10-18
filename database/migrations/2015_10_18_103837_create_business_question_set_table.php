@@ -18,8 +18,8 @@ class CreateBusinessQuestionSetTable extends Migration
             $table->integer('business_id');
             $table->integer('question_set_id');
 
-            $table->foreign('business_id')->references('id')->on('business');
-            $table->foreign('question_set_id')->references('id')->on('question_set');
+            //$table->foreign('business_id')->references('id')->on('business');
+            //$table->foreign('question_set_id')->references('id')->on('question_set');
         });
     }
 

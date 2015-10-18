@@ -23,7 +23,8 @@ class CreateAnswerTable extends Migration
                         // Someone thinks it is a loss of database storage, but if we store this data in user end, then it will be even more,
                         // So, storing it is best,
                         //what do u think????
-            $table->foreign('question_id')->references('id')->on('question');
+
+            //$table->foreign('question_id')->references('id')->on('question');
         });
     }
 

@@ -26,7 +26,8 @@ class CreateQuestionTable extends Migration
                 3. multiple_choice      (may be one or more answer)
                 4. radio group          (may only one answer)
             */
-            $table->foreign('question_set_id')->references('id')->on('question_set');
+
+            //$table->foreign('question_set_id')->references('id')->on('question_set');
         });
     }
 
