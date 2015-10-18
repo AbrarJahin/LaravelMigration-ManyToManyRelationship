@@ -14,7 +14,8 @@ class CreateAnswerTable extends Migration
     {
         Schema::create('answer', function (Blueprint $table)
         {
-            $table->integer('question_id');
+            $table->increments('id');
+            $table->integer('question_id')  ->unsigned()  ->index();
             $table->string('possible_answer');
             $table->integer('star_rating_value');
                         //if any question has star rating,
@@ -24,7 +25,7 @@ class CreateAnswerTable extends Migration
                         // So, storing it is best,
                         //what do u think????
 
-            //$table->foreign('question_id')->references('id')->on('question');
+            $table->foreign('question_id')->references('id')->on('question');
         });
     }
 

@@ -15,7 +15,7 @@ class CreateQuestionTable extends Migration
         Schema::create('question', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('question_set_id');
+            $table->integer('question_set_id')  ->unsigned()  ->index();
             $table->string('question');
             $table->string('type');
             /*
@@ -27,7 +27,7 @@ class CreateQuestionTable extends Migration
                 4. radio group          (may only one answer)
             */
 
-            //$table->foreign('question_set_id')->references('id')->on('question_set');
+            $table->foreign('question_set_id')->references('id')->on('question_set');
         });
     }
 

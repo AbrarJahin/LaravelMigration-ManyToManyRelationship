@@ -15,11 +15,11 @@ class CreateBusinessQuestionSetTable extends Migration
         Schema::create('business-question_set', function (Blueprint $table)
         {
             //Cross table for question_set and adjusent business
-            $table->integer('business_id');
-            $table->integer('question_set_id');
+            $table->integer('business_id')      ->unsigned()  ->index();
+            $table->integer('question_set_id')  ->unsigned()  ->index();
 
-            //$table->foreign('business_id')->references('id')->on('business');
-            //$table->foreign('question_set_id')->references('id')->on('question_set');
+            $table->foreign('business_id')->references('id')->on('business');
+            $table->foreign('question_set_id')->references('id')->on('question_set');
         });
     }
 
