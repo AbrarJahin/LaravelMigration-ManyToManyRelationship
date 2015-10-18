@@ -15,6 +15,7 @@ class CreateBusinessQuestionSetTable extends Migration
         Schema::create('business-question_set', function (Blueprint $table)
         {
             //Cross table for question_set and adjusent business
+            $table->increments('id');
             $table->integer('business_id')      ->unsigned()  ->index();
             $table->integer('question_set_id')  ->unsigned()  ->index();
 
