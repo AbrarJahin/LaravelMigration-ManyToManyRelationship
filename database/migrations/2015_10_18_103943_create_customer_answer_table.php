@@ -14,6 +14,7 @@ class CreateCustomerAnswerTable extends Migration
     {
         Schema::create('customer-answer', function (Blueprint $table)
         {
+            //business-question_set_id -> can't be used because it is too long name, so bq_id is used
             $table->integer('bq_id')        ->unsigned()  ->index();    //index for being foreign key
             $table->integer('customer_id')  ->unsigned()  ->index();    //index for being foreign key
             $table->integer('answer_id')    ->unsigned()  ->index();    //index for being foreign key
